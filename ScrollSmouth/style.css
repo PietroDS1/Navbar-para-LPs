@@ -21,7 +21,7 @@ nav {
   gap: 2rem;
   z-index: 1000;
   backdrop-filter: blur(6px);
-  flex-wrap: wrap; /* permite quebrar em telas pequenas */
+  flex-wrap: wrap;
 }
 
 nav a {
