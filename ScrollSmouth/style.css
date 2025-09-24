@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(51, 51, 51, 0.9);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  flex-wrap: wrap; /* permite quebrar em telas pequenas */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #00bcd4;
+  transition: width 0.4s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #00bcd4;
+}
+
+/* Seções */
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+#home { background: linear-gradient(135deg, #ff6f61, #f44336); }
+#sobre { background: linear-gradient(135deg, #81c784, #4caf50); }
+#servicos { background: linear-gradient(135deg, #64b5f6, #2196f3); }
+#contato { background: linear-gradient(135deg, #ffb74d, #ff9800); }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  section {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  section {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+}
